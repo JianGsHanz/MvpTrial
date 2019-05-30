@@ -1,9 +1,9 @@
-package com.example.mvptrial.splash
+package com.example.mvptrial.ui.splash
 
 import android.content.Intent
 import com.example.mvptrial.R
 import com.example.mvptrial.base.BaseActivity
-import com.example.mvptrial.main.MainActivity
+import com.example.mvptrial.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : BaseActivity<SplashContract.view,SplashPresenter>(),SplashContract.view {

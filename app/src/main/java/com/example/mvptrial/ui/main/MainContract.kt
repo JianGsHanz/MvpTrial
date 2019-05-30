@@ -1,4 +1,4 @@
-package com.example.mvptrial.splash
+package com.example.mvptrial.ui.main
 
 import com.example.mvptrial.base.IBasePresenter
 import com.example.mvptrial.base.IBaseView
@@ -8,11 +8,12 @@ import com.example.mvptrial.base.IBaseView
  *Author:zyh
  *Description:
  */
-interface SplashContract{
+interface MainContract{
     interface view : IBaseView {
-        fun setInterval(i : Int)
-        fun result()
+        fun showCharacter(result : String)
+        fun showImg(url : String)
     }
     interface presenter : IBasePresenter {
+        fun getBannerData()
     }
 }

@@ -2,7 +2,6 @@ package com.example.mvptrial.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.example.mvptrial.main.MainContract
 
 /**
  *Time:2019/5/20

@@ -1,4 +1,4 @@
-package com.example.mvptrial.splash
+package com.example.mvptrial.ui.splash
 
 import android.annotation.SuppressLint
 import com.example.mvptrial.base.BasePresenter
