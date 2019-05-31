@@ -1,5 +1,6 @@
 package com.example.mvptrial.base
 
+import android.content.Context
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
@@ -12,6 +13,14 @@ open class BasePresenter<V : IBaseView> : IBasePresenter {
 
     var mView : V? = null
     var mCompositeDisposable : CompositeDisposable? = null
+    protected var context: Context? = null
+
+    constructor()
+
+    constructor(context: Context){
+        this.context = context
+    }
+
     override fun loadData() {
     }
 

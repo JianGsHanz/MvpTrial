@@ -7,10 +7,8 @@ package com.example.mvptrial.bean
  */
 data class BannerResult(
     val data : List<Data>,
-    val code: Int,
-    val message: String,
-    val status: String
-)
+    val code: Int
+) : CommonResult<BannerResult>()
 
 data class Data(
     val ad_address_url: String,

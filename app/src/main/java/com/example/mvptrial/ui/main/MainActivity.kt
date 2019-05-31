@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : BaseActivity<MainContract.view , MainPresenter>(),
     MainContract.view {
 
-    override fun getPresenter(): MainPresenter = MainPresenter()
+    override fun getPresenter(): MainPresenter = MainPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
