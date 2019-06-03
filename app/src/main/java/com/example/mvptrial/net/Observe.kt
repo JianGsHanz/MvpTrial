@@ -1,12 +1,10 @@
 package com.example.mvptrial.net
 
-import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
 import android.graphics.drawable.AnimationDrawable
 import android.view.LayoutInflater
 import android.widget.ImageView
-import com.example.mvptrial.App
 import com.example.mvptrial.R
 import com.example.mvptrial.bean.CommonResult
 import io.reactivex.Observer

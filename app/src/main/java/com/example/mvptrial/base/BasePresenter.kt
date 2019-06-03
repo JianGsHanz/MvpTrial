@@ -12,7 +12,7 @@ import io.reactivex.disposables.Disposable
 open class BasePresenter<V : IBaseView> : IBasePresenter {
 
     var mView : V? = null
-    var mCompositeDisposable : CompositeDisposable? = null
+    private var mCompositeDisposable : CompositeDisposable? = null
     protected var context: Context? = null
 
     constructor()
