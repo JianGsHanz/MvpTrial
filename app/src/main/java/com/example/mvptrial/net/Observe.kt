@@ -38,7 +38,8 @@ abstract class Observe<T> : Observer<CommonResult<T>> {
     }
 
     override fun onError(e: Throwable) {
-        onFailure()
+        dismissDialog()
+        onFailure(e)
     }
 
 
@@ -62,5 +63,5 @@ abstract class Observe<T> : Observer<CommonResult<T>> {
         }
     }
     abstract fun onSuccess(t: CommonResult<T>)
-    abstract fun onFailure()
+    abstract fun onFailure(e: Throwable)
 }

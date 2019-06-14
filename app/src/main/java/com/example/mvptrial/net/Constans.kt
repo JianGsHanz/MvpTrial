@@ -6,5 +6,6 @@ package com.example.mvptrial.net
  *Description:常量
  */
 object Constans {
-    val BASE_URL : String = "https://onecardyingxiaotest.9fbank.com"
+    val BASE_URL : String = "https://onecardyingxiaotest.9fbank.com/"
+    val BASE_URL_ONE : String = "http://www.wanandroid.com/"
 }
