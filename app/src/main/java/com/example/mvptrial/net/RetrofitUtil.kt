@@ -27,28 +27,17 @@ object RetrofitUtil {
     //最大缓存
     private const val HTTP_RESPONSE_DISK_CACHE_MAX_SIZE = (20 * 1024 * 1024).toLong()//设置20M
 
-    private lateinit var appApis : AppApis
-
-    init {
-        initRetrofit()
-    }
-
-
-    fun getApis() = appApis
-
     //初始化Retrofit
-    private fun initRetrofit(){
-        val retrofit = Retrofit.Builder()
+     fun initRetrofit(baseUrl : String): Retrofit = Retrofit.Builder()
              //baseurl
-            .baseUrl(Constans.BASE_URL)
+            .baseUrl(baseUrl)
             //JSON转换器,使用Gson来转换
             .addConverterFactory(GsonConverterFactory.create())
             //RxJava适配器
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(getOkHttpClient())
             .build()
-        appApis = retrofit.create(AppApis::class.java)
-    }
+
     private fun getOkHttpClient() : OkHttpClient = OkHttpClient.Builder()
             //设置连接超时时间
             .connectTimeout(DEFAULT_CONNECT_TIMEOUT_MILLIS, TimeUnit.SECONDS)

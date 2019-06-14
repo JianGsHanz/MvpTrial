@@ -6,7 +6,7 @@ import com.example.mvptrial.base.BasePresenter
 import com.example.mvptrial.bean.BannerResult
 import com.example.mvptrial.bean.CommonResult
 import com.example.mvptrial.net.Observe
-import com.example.mvptrial.net.RetrofitUtil
+import com.example.mvptrial.net.RetrofitHelper
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
@@ -30,13 +30,30 @@ class MainPresenter(context: Context) : BasePresenter<MainContract.view>(), Main
 //            }, {
 //                Log.e("","${it.message}")
 //            }))
-        RetrofitUtil.getApis().getBanner(map)
+//        RetrofitUtil.getApis().getBanner(map)
+//            .subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribe(object : Observe<BannerResult>(contexts!!) {
+//                override fun onSuccess(t: CommonResult<BannerResult>) {
+//                    t as BannerResult
+//                    if (t.data.isNotEmpty()) {
+//                        mView!!.showImg(t.data[0].img_url)
+//                    }
+//                    mView!!.showCharacter(t.toString())
+//                }
+//
+//                override fun onFailure() {
+//                    Log.e("", "")
+//                }
+//
+//            })
+        RetrofitHelper.getApiService().getBanner(map)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : Observe<BannerResult>(contexts!!) {
                 override fun onSuccess(t: CommonResult<BannerResult>) {
                     t as BannerResult
-                    if (t.data.isNotEmpty()) {
+                    if (t.data!= null && t.data.isNotEmpty()) {
                         mView!!.showImg(t.data[0].img_url)
                     }
                     mView!!.showCharacter(t.toString())
