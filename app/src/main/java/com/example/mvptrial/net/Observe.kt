@@ -33,7 +33,6 @@ abstract class Observe<T> : Observer<CommonResult<T>> {
 
     override fun onNext(t: CommonResult<T>) {
         dismissDialog()
-        if (t.getStatus() == "0")
         onSuccess(t)
     }
 

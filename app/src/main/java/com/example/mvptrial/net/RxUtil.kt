@@ -1,8 +1,5 @@
 package com.example.mvptrial.net
 
-import android.app.Activity
-import io.reactivex.Observable
-import io.reactivex.ObservableSource
 import io.reactivex.ObservableTransformer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -19,7 +16,7 @@ object RxUtil{
      * @param <T>
      * @return
     </T> */
-    fun <T> rxSchedulerHelper(activity: Activity): ObservableTransformer<T, T> {    //compose简化线程
+    fun <T> rxSchedulerHelper(): ObservableTransformer<T, T> {    //compose简化线程
         return ObservableTransformer { observable ->
             observable
                 .subscribeOn(Schedulers.io())

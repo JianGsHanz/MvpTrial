@@ -1,18 +1,13 @@
 package com.example.mvptrial.ui.main
 
 import android.app.Activity
-import android.content.Context
 import android.util.Log
 import com.example.mvptrial.base.BasePresenter
-import com.example.mvptrial.bean.AccessCanoe
-import com.example.mvptrial.bean.BannerResult
-import com.example.mvptrial.bean.BannerResults
+import com.example.mvptrial.bean.AccessBean
 import com.example.mvptrial.bean.CommonResult
 import com.example.mvptrial.net.Observe
 import com.example.mvptrial.net.RetrofitHelper
 import com.example.mvptrial.net.RxUtil
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 
 /**
  *Time:2019/5/20
@@ -68,14 +63,15 @@ class MainPresenter(context: Activity) : BasePresenter<MainContract.view>(), Mai
 
             })*/
         RetrofitHelper.getApiServiceOne().getAccess()
-            .compose(RxUtil.rxSchedulerHelper(contexts!!))
-            .subscribe(object : Observe<BannerResults>(contexts!!) {
-                override fun onSuccess(t: CommonResult<BannerResults>) {
-                    t as BannerResults
+            .compose(RxUtil.rxSchedulerHelper())
+            .subscribe(object : Observe<AccessBean>(contexts!!) {
+                override fun onSuccess(t: CommonResult<AccessBean>) {
+                    val bean = t as AccessBean
 //                    if (t.data!= null && t.data.isNotEmpty()) {
 //                        mView!!.showImg(t.data[0].img_url)
 //                    }
                     mView!!.showCharacter(t.toString())
+                    mView!!.showImg(bean.data[0].imagePath)
                 }
 
                 override fun onFailure(e: Throwable) {

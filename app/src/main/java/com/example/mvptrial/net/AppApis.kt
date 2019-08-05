@@ -1,6 +1,6 @@
 package com.example.mvptrial.net
 
-import com.example.mvptrial.bean.AccessCanoe
+import com.example.mvptrial.bean.AccessBean
 import com.example.mvptrial.bean.BannerResult
 import com.example.mvptrial.bean.BannerResults
 import io.reactivex.Observable
@@ -21,5 +21,5 @@ interface AppApis{
     fun getBanner(@FieldMap map: Map<String,String>) : Observable<BannerResult>
 
     @GET("banner/json")
-    fun getAccess() : Observable<BannerResults>
+    fun getAccess() : Observable<AccessBean>
 }
