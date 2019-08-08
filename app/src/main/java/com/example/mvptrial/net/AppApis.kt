@@ -2,7 +2,6 @@ package com.example.mvptrial.net
 
 import com.example.mvptrial.bean.AccessBean
 import com.example.mvptrial.bean.BannerResult
-import com.example.mvptrial.bean.BannerResults
 import io.reactivex.Observable
 import retrofit2.http.FieldMap
 import retrofit2.http.FormUrlEncoded

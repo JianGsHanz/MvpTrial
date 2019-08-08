@@ -29,7 +29,7 @@ open class BasePresenter<V : IBaseView> : IBasePresenter {
     }
 
     fun detachView(){
-        mView == null
+        mView = null
         clearRx()
     }
 

@@ -62,12 +62,12 @@ object InterceptorHelper{
 
             val compressedRequest = originalRequest.newBuilder()
 //                .header("Content-Encoding", "gzip")
-                .addHeader("token","77140300327802008a6002b6e43148a19309231afe74a10f")
-                .addHeader("deviceType","android")
-                .addHeader("proId","360sjzs8a518bd623ddbecbb2b2a3bb7f640e30")
-                .addHeader("version","3.3.7")
-                .addHeader("isOpenPush","1")
-                .addHeader("module","wk-front")
+//                .addHeader("token","77140300327802008a6002b6e43148a19309231afe74a10f")
+//                .addHeader("deviceType","android")
+//                .addHeader("proId","360sjzs8a518bd623ddbecbb2b2a3bb7f640e30")
+//                .addHeader("version","3.3.7")
+//                .addHeader("isOpenPush","1")
+//                .addHeader("module","wk-front")
                 .build()
              return@Interceptor chain!!.proceed(compressedRequest)
     }

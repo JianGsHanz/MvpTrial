@@ -2,6 +2,7 @@ package com.example.mvptrial.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import javax.inject.Inject
 
 /**
  *Time:2019/5/20
@@ -11,26 +12,26 @@ import android.support.v7.app.AppCompatActivity
 abstract class BaseActivity<V: IBaseView,P : BasePresenter<V>> : AppCompatActivity(),
     IBaseView {
 
+    @Inject
     lateinit var mPresenter : P
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
 
-        mPresenter = getPresenter()
-        if (mPresenter != null){
-            mPresenter.attachView(this as V)
-        }
-        mPresenter.loadData()
+        inject()
+        mPresenter?.attachView(this as V)
+        mPresenter?.loadData()
         initViewAndEvent()
     }
 
     abstract fun getLayoutId(): Int
-    abstract fun getPresenter() : P
+    abstract fun inject()
     abstract fun initViewAndEvent()
 
 
     override fun onDestroy() {
         super.onDestroy()
-        mPresenter.detachView()
+        mPresenter?.detachView()
     }
 }

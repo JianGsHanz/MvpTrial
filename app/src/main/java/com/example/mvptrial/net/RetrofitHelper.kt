@@ -1,11 +1,9 @@
 package com.example.mvptrial.net
 
-import android.util.Log
-
 /**
  *Time:2019/6/14
  *Author:zyh
- *Description: 代理类-可以配置多个BaseUrl
+ *Description: 代理类-可以配置多个BaseUrl(现转成dagger2注入)
  */
 object RetrofitHelper {
     private var apiService : Any? = null
@@ -15,7 +13,6 @@ object RetrofitHelper {
         if (apiService == null) {
             apiService = AgentApi.getApiService(AppApis::class.java, Constans.BASE_URL)
         }
-        println("apiService = $apiService")
         return apiService as AppApis
     }
 
@@ -23,7 +20,6 @@ object RetrofitHelper {
         if (apiServices == null) {
             apiServices = AgentApi.getApiService(AppApis::class.java, Constans.BASE_URL_ONE)
         }
-        println("apiService = $apiServices")
         return apiServices as AppApis
     }
 }

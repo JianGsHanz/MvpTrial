@@ -6,13 +6,17 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 
 /**
  *Time:2019/5/20
  *Author:zyh
  *Description:
  */
-class SplashPresenter : BasePresenter<SplashContract.view>(), SplashContract.presenter {
+class SplashPresenter : BasePresenter<SplashContract.view>, SplashContract.presenter {
+
+    @Inject
+    constructor()
 
     @SuppressLint("CheckResult")
     override fun loadData() {

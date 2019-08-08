@@ -60,7 +60,7 @@ object RetrofitUtil {
 //            .sslSocketFactory()
 //            .hostnameVerifier()
             //缓存
-            .cache(getCache(App.getInstance()!!.applicationContext))
+            .cache(getCache(App.app!!.applicationContext))
             .build()
 
 
