@@ -3,9 +3,9 @@ package com.example.mvptrial.ui.main
 import com.example.mvptrial.App
 import com.example.mvptrial.R
 import com.example.mvptrial.base.BaseActivity
+import com.example.mvptrial.toast
 import com.example.mvptrial.util.ImageUtlis
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.inject.Inject
 
 class MainActivity : BaseActivity<MainContract.view , MainPresenter>(),
     MainContract.view {
@@ -14,6 +14,7 @@ class MainActivity : BaseActivity<MainContract.view , MainPresenter>(),
 
     override fun initViewAndEvent() {
         bt.setOnClickListener {
+            toast("正在请求")
             mPresenter.getBannerData()
         }
     }
