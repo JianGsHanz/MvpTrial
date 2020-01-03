@@ -23,7 +23,7 @@ class SplashActivity : BaseActivity<SplashContract.view,SplashPresenter>(),Splas
     }
 
     override fun inject() {
-        App.app!!.getActivityCommponent(this).inject(this)
+        App.app.getActivityCommponent(this).inject(this)
     }
 
 }

@@ -28,7 +28,7 @@ class MainActivity : BaseActivity<MainContract.view , MainPresenter>(),
     }
 
     override fun inject() {
-        App.app!!.getActivityCommponent(this).inject(this)
+        App.app.getActivityCommponent(this).inject(this)
     }
 
 }
