@@ -1,13 +1,8 @@
 package com.example.mvptrial.net
 
 import android.util.Log
-import com.example.mvptrial.App
-import okhttp3.CacheControl
 import okhttp3.Interceptor
-import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
-import java.io.IOException
-import java.util.concurrent.TimeUnit
 
 
 /**

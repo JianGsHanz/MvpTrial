@@ -7,7 +7,7 @@ import com.example.mvptrial.base.BaseActivity
 import com.example.mvptrial.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
-class SplashActivity : BaseActivity<SplashContract.view,SplashPresenter>(),SplashContract.view {
+class SplashActivity : BaseActivity<SplashPresenter>(),SplashContract.view {
 
     override fun getLayoutId(): Int = R.layout.activity_splash
 

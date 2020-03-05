@@ -1,7 +1,6 @@
 package com.example.mvptrial.ui.main
 
 import android.app.Activity
-import android.content.Context
 import android.util.Log
 import com.example.mvptrial.base.BasePresenter
 import com.example.mvptrial.bean.AccessBean

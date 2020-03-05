@@ -24,8 +24,8 @@ open class BasePresenter<V : IBaseView> : IBasePresenter {
     override fun loadData() {
     }
 
-    fun attachView(view: V){
-        mView = view
+    fun attachView(view: IBaseView){
+        mView = view as V
     }
 
     fun detachView(){

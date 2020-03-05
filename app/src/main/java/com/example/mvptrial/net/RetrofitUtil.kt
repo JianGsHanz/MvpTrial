@@ -3,13 +3,13 @@ package com.example.mvptrial.net
 import android.content.Context
 import com.example.mvptrial.App
 import com.example.mvptrial.util.FileUtils
-import okhttp3.OkHttpClient
-import java.util.concurrent.TimeUnit
 import okhttp3.Cache
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
+import java.util.concurrent.TimeUnit
 
 
 /**
@@ -55,7 +55,7 @@ object RetrofitUtil {
             //添加缓存拦截器
 //            .addInterceptor()
             //添加重试拦截器
-            .addNetworkInterceptor(InterceptorHelper.getRetryInterceptor())
+            .addInterceptor(InterceptorHelper.getRetryInterceptor())
             // 信任Https,忽略Https证书验证
             // https认证,如果要使用https且为自定义证书 可以去掉这两行注释，并自行配制证书。
 //            .sslSocketFactory()

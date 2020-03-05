@@ -9,7 +9,7 @@ import javax.inject.Inject
  *Author:zyh
  *Description:
  */
-abstract class BaseActivity<V: IBaseView,P : BasePresenter<V>> : AppCompatActivity(),
+abstract class BaseActivity<P : BasePresenter<*>> : AppCompatActivity(),
     IBaseView {
 
     @Inject
@@ -20,7 +20,7 @@ abstract class BaseActivity<V: IBaseView,P : BasePresenter<V>> : AppCompatActivi
         setContentView(getLayoutId())
 
         inject()
-        mPresenter.attachView(this as V)
+        mPresenter.attachView(this)
         mPresenter.loadData()
         initViewAndEvent()
     }

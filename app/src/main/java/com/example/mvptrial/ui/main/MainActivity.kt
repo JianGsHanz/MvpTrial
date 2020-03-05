@@ -7,8 +7,7 @@ import com.example.mvptrial.toast
 import com.example.mvptrial.util.ImageUtlis
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity<MainContract.view , MainPresenter>(),
-    MainContract.view {
+class MainActivity : BaseActivity<MainPresenter>(), MainContract.view {
 
     override fun getLayoutId(): Int = R.layout.activity_main
 
