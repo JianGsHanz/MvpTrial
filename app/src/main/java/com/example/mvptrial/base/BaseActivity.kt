@@ -20,8 +20,8 @@ abstract class BaseActivity<V: IBaseView,P : BasePresenter<V>> : AppCompatActivi
         setContentView(getLayoutId())
 
         inject()
-        mPresenter?.attachView(this as V)
-        mPresenter?.loadData()
+        mPresenter.attachView(this as V)
+        mPresenter.loadData()
         initViewAndEvent()
     }
 
@@ -32,6 +32,6 @@ abstract class BaseActivity<V: IBaseView,P : BasePresenter<V>> : AppCompatActivi
 
     override fun onDestroy() {
         super.onDestroy()
-        mPresenter?.detachView()
+        mPresenter.detachView()
     }
 }
