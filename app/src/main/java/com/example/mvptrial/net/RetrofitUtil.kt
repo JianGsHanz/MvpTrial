@@ -38,6 +38,7 @@ object RetrofitUtil {
             .client(getOkHttpClient())
             .build()
 
+
     private fun getOkHttpClient() : OkHttpClient = OkHttpClient.Builder()
             //设置连接超时时间
             .connectTimeout(DEFAULT_CONNECT_TIMEOUT_MILLIS, TimeUnit.SECONDS)
@@ -46,15 +47,15 @@ object RetrofitUtil {
             //设置写入超时时间
             .writeTimeout(DEFAULT_WRITE_TIMEOUT_MILLIS, TimeUnit.SECONDS)
             //默认重试一次
-            .retryOnConnectionFailure(true)
+//            .retryOnConnectionFailure(true)
             //添加请求头拦截器
-            .addInterceptor(InterceptorHelper.getHeaderInterceptor())
+            .addNetworkInterceptor(InterceptorHelper.getHeaderInterceptor())
             //添加日志拦截器
             .addInterceptor(InterceptorHelper.getLogInterceptor())
             //添加缓存拦截器
 //            .addInterceptor()
             //添加重试拦截器
-            .addInterceptor(InterceptorHelper.getRetryInterceptor())
+            .addNetworkInterceptor(InterceptorHelper.getRetryInterceptor())
             // 信任Https,忽略Https证书验证
             // https认证,如果要使用https且为自定义证书 可以去掉这两行注释，并自行配制证书。
 //            .sslSocketFactory()
@@ -62,7 +63,6 @@ object RetrofitUtil {
             //缓存
             .cache(getCache(App.app!!.applicationContext))
             .build()
-
 
 
 

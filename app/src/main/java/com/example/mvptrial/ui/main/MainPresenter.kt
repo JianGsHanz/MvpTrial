@@ -74,7 +74,7 @@ class MainPresenter : BasePresenter<MainContract.view>, MainContract.presenter {
             })*/
         appApis.getAccess()
             .compose(RxUtil.rxSchedulerHelper())
-            .subscribe(object : Observe<AccessBean>(contexts!!) {
+            .subscribe(object : Observe<AccessBean>(contexts) {
                 override fun onSuccess(t: CommonResult<AccessBean>) {
                     val bean = t as AccessBean
 //                    if (t.data!= null && t.data.isNotEmpty()) {
